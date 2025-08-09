@@ -1,0 +1,109 @@
+:root{
+  --accent: #c86b85;
+  --accent-2: #f3dfe6;
+  --bg: #fff9f9;
+  --text: #222;
+  --muted: #666;
+  --radius: 12px;
+  --header-height: 64px;
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-family:'Noto Sans JP',system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text)}
+body{margin:0;padding-top:var(--header-height);line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+img{max-width:100%;display:block;border-radius:12px}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:#fff;box-shadow:0 1px 6px rgba(0,0,0,0.06);z-index:1100}
+.header .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.logo{font-weight:700;color:var(--accent);text-decoration:none}
+.logo span{color:var(--muted);font-weight:400;margin-left:6px}
+.nav-list{display:flex;gap:20px;align-items:center;list-style:none;margin:0;padding:0}
+.nav-link{color:var(--muted);text-decoration:none;font-weight:600;padding:8px}
+.nav-link:hover,.nav-link:focus{color:var(--accent);outline:none}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;user-select:none;border:none}
+.btn-reserve{background:var(--accent);color:#fff}
+.hamburger{display:none;background:none;border:none;padding:8px;cursor:pointer}
+.hamburger .bar{width:22px;height:2px;background:var(--accent);display:block;margin:4px 0;border-radius:2px;transition:transform .25s,opacity .25s}
+
+/* Sidebar */
+.sidebar{position:fixed;right:18px;top:100px;width:260px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08);padding:12px;z-index:1050}
+.sidebar .sidebar-toggle{position:absolute;left:-62px;top:12px;background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700}
+.sidebar-inner h3{margin:0 0 8px;font-size:1.05rem;color:var(--accent)}
+.sidebar form{display:flex;flex-direction:column;gap:8px}
+.btn-small{padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff}
+
+/* Hero */
+.hero{position:relative;margin-top:var(--header-height);height:calc(100vh - var(--header-height));display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(90deg,#fce4ec 0%,#f8bbd0 100%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.6);z-index:0;border-radius:0}
+.hero-content{position:relative;z-index:2;color:#fff;padding:0 16px;max-width:720px}
+.hero-title{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 12px;font-weight:800}
+.hero-sub{margin:0 0 18px;font-size:1.1rem}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.primary-btn{background:var(--accent);color:#fff;padding:12px 20px;border-radius:999px}
+.ghost-btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);padding:10px 18px;border-radius:999px}
+
+/* Sections */
+.section{padding:64px 0}
+.section-title{text-align:center;color:var(--accent);font-size:1.6rem;margin-bottom:24px}
+.section-text{max-width:720px;margin:0 auto;color:var(--muted)}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.service-card{background:#fff;padding:18px;border-radius:14px;box-shadow:0 8px 24px rgba(200,107,133,0.08);transition:transform .25s}
+.service-card:hover{transform:translateY(-6px)}
+.service-card h3{color:var(--accent);margin:12px 0}
+
+/* Reviews slider */
+.reviews-section .reviews-slider, .reviews-slider{display:flex;align-items:center;gap:12px;max-width:720px;margin:0 auto}
+.reviews-list{position:relative;flex:1;height:150px;overflow:hidden;padding:0;margin:0;list-style:none}
+.review-card{position:absolute;top:0;left:0;width:100%;padding:20px;border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,0.06);opacity:0;transform:translateX(10%);transition:opacity .36s ease,transform .36s ease;pointer-events:none}
+.review-card[aria-hidden="false"]{opacity:1;transform:translateX(0);pointer-events:auto}
+.review-card blockquote{margin:0 0 10px;font-size:1.05rem;color:var(--text)}
+.review-card .who{color:var(--muted);text-align:right;font-weight:600}
+.review-btn{background:none;border:none;font-size:1.8rem;color:var(--accent);cursor:pointer;padding:6px;border-radius:8px}
+.review-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.review-dot{width:10px;height:10px;border-radius:50%;background:#e6d6db;cursor:pointer}
+.review-dot.active{background:var(--accent)}
+
+/* Contact form */
+.contact-form{max-width:520px;margin:0 auto;background:#fff;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+.form-row{margin-bottom:12px;display:flex;flex-direction:column}
+label{font-weight:700;color:var(--accent);margin-bottom:6px}
+input,textarea{padding:10px;border:1px solid #efe4e8;border-radius:10px;font-family:inherit}
+input:focus,textarea:focus{outline:none;box-shadow:0 0 8px rgba(200,107,133,0.12);border-color:var(--accent)}
+.error-message{color:#b00020;font-size:.9rem;min-height:1.1em}
+.submit-btn{width:100%;padding:12px;border-radius:999px;background:var(--accent);color:#fff;border:none;font-weight:700;cursor:pointer}
+.form-message{margin-top:12px;color:var(--muted)}
+
+/* CTA reserve */
+.cta-section{text-align:center;padding:56px 0;background:linear-gradient(180deg,rgba(248,236,240,0.9),#fff)}
+.cta-section .primary-btn{padding:12px 28px;border-radius:30px}
+
+/* Footer */
+.footer{padding:20px 0;text-align:center;color:var(--muted);background:transparent}
+
+/* Responsive */
+@media (max-width: 880px){
+  .sidebar{display:none}
+  .hamburger{display:block}
+  .nav-list{display:none;position:fixed;top:var(--header-height);right:0;background:#fff;padding:24px;border-radius:8px 0 0 8px;box-shadow:-6px 0 20px rgba(0,0,0,0.08)}
+  .nav-list.open{display:flex;flex-direction:column;gap:12px}
+  .hero{height:60vh}
+  .reviews-list{height:180px}
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  z-index: -1;
+  border-radius: 0;
+}

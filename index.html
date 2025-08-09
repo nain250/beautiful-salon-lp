@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>美麗サロン - 輝くあなたのために</title>
+  <meta name="description" content="美麗サロンの公式ランディングページ。上質な施術と癒しの空間を提供します。初回限定キャンペーン実施中！" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="美麗サロントップへ">美麗<span>サロン</span></a>
+
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav-list" id="nav-list">
+          <li><a class="nav-link" href="#about">サロンについて</a></li>
+          <li><a class="nav-link" href="#services">サービス</a></li>
+          <li><a class="nav-link" href="#reviews">お客様の声</a></li>
+          <li><a class="nav-link" href="#contact">予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-reserve" href="#reserve">LINE予約</a>
+        <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="nav-list">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- サイドバー（クイック予約） -->
+  <aside id="sidebar" class="sidebar" aria-label="クイック予約">
+    <button id="sidebarToggle" class="sidebar-toggle" aria-expanded="true" aria-controls="sidebar">
+      予約
+    </button>
+    <div class="sidebar-inner" id="sidebarInner">
+      <h3>クイック予約</h3>
+      <p>初回30%OFF（先着100名）</p>
+      <form id="quick-form" novalidate>
+        <label for="q-name">お名前</label>
+        <input id="q-name" name="name" type="text" required>
+        <label for="q-date">ご希望日時</label>
+        <input id="q-date" name="date" type="datetime-local" required>
+        <button type="submit" class="btn btn-small">送信</button>
+        <p id="quick-msg" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </aside>
+
+  <main id="top" tabindex="-1">
+    <!-- hero -->
+    <section class="hero" role="region" aria-label="ファーストビュー">
+      <picture>
+        <source media="(max-width:719px)" srcset="images/hero-mobile.jpg">
+        <source media="(min-width:720px)" srcset="images/hero-wide.jpg">
+        <img src="images/hero.jpg" alt="サロンのイメージ" class="hero-img" />
+      </picture>
+
+      <div class="hero-content">
+        <h1 class="hero-title">輝くあなたのための美容体験</h1>
+        <p class="hero-sub">癒しと美を融合させた特別なサロン</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn primary-btn">今すぐ予約する</a>
+          <a href="#services" class="btn ghost-btn">サービスを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="section about-section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">美麗サロンについて</h2>
+        <p class="section-text">美麗サロンは、都会の喧騒から離れた静かな空間で、一人ひとりに合わせた丁寧な施術を提供しています。最新の技術と厳選された自然由来の商材で、肌も心も美しく健康に導きます。</p>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section id="services" class="section services-section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="section-title">サービスメニュー</h2>
+        <div class="services-grid">
+          <article class="service-card" tabindex="0">
+            <img src="images/service-facial.jpg" alt="フェイシャルトリートメント" loading="lazy">
+            <h3>フェイシャルトリートメント</h3>
+            <p>潤いとハリを与え、透明感を引き出す人気の施術。</p>
+          </article>
+          <article class="service-card" tabindex="0">
+            <img src="images/service-body.jpg" alt="ボディマッサージ" loading="lazy">
+            <h3>ボディマッサージ</h3>
+            <p>疲れを解きほぐし、リラクゼーション効果抜群。</p>
+          </article>
+          <article class="service-card" tabindex="0">
+            <img src="images/service-nail.jpg" alt="ネイルケア" loading="lazy">
+            <h3>ネイルケア</h3>
+            <p>上質な仕上がりとデザインで指先から美しく。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- reviews -->
+    <section id="reviews" class="section reviews-section" aria-labelledby="reviews-title">
+      <div class="container">
+        <h2 id="reviews-title" class="section-title">お客様の声</h2>
+
+        <div class="reviews-slider" aria-live="polite">
+          <button class="review-btn" id="prevReview" aria-label="前のレビュー">‹</button>
+
+          <ul class="reviews-list" id="reviewsList" role="list">
+            <li class="review-card" role="listitem" data-index="0" aria-hidden="false">
+              <blockquote>「数日で肌のしっとり感が出て、化粧ノリが良くなりました」</blockquote>
+              <p class="who">30代 / 会社員</p>
+            </li>
+            <li class="review-card" role="listitem" data-index="1" aria-hidden="true">
+              <blockquote>「敏感肌でも問題なく使え、安心して続けられます」</blockquote>
+              <p class="who">40代 / 主婦</p>
+            </li>
+            <li class="review-card" role="listitem" data-index="2" aria-hidden="true">
+              <blockquote>「店内が落ち着いていて施術も丁寧。癒されました。」</blockquote>
+              <p class="who">20代 / 学生</p>
+            </li>
+          </ul>
+
+          <button class="review-btn" id="nextReview" aria-label="次のレビュー">›</button>
+        </div>
+
+        <div class="review-dots" id="reviewDots" aria-hidden="false"></div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">予約・お問い合わせ</h2>
+        <form id="contact-form" class="contact-form" novalidate aria-describedby="form-message" aria-live="polite">
+          <div class="form-row">
+            <label for="name">お名前 <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" required>
+            <span class="error-message" aria-live="polite"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">メールアドレス <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" required>
+            <span class="error-message" aria-live="polite"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="date">ご希望日時 <span aria-hidden="true">*</span></label>
+            <input id="date" name="date" type="datetime-local" required>
+            <span class="error-message" aria-live="polite"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="message">ご質問・ご要望</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn submit-btn">送信する</button>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- reserve CTA (for anchor) -->
+    <section id="reserve" class="section cta-section" aria-label="予約セクション">
+      <div class="container">
+        <h2 class="section-title">まずはお試し！<span>初回30%OFF</span></h2>
+        <p>LINEから簡単予約。今すぐクーポンを受け取る。</p>
+        <a href="#" class="btn primary-btn">LINEで予約する</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 美麗サロン</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
